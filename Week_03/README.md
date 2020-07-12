@@ -13,7 +13,6 @@
 2、从前序与中序构建二叉树  
 递归：  
 最主要的是理解几个重要位置
-
 假设i是中序遍历的根节点。  
 那么在Go语言中inOrder[:i]就是左子树，inOrder[i+1:]就是右子树。  
 在preOrder中，preOrder[1:inOrder[:i]的长度+1]就是左子树。preOrder[inOrder[:i]的长度+1]:]就是右子树。  
@@ -21,8 +20,10 @@
 在左子树中，根据Go切片的定义，取部分切片时，：左右两边为前开后闭区间，即[)。  
 另一个需要注意的地方是  
 var root = &TreeNode{前序起点，nil,nil}
-取TreeNode的地址。
-     
+取TreeNode的地址。  
+构建左右子树
+root.Left = buildTree(preorder[1:len(inorder[:i])+1], inorder[:i])
+root.Right = buildTree(preorder[len(inorder[:i])+1:], inorder[i+1:])
 
 
  
