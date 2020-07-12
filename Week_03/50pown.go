@@ -2,7 +2,7 @@ package Week_03
 
 func pown(x float64, n int) float64 {
 	//2、递归
-	//时间复杂度：O(N)
+	//时间复杂度：O(logN)
 
 	//n < 0 情况
 	if n < 0 {
