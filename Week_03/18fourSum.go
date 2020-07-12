@@ -8,6 +8,7 @@ func fourSum(nums []int, target int) [][]int {
 		return nil
 	}
 	var result = make([][]int, 0)
+	sort.Ints(nums)
 	for i := 0; i < length-3; i++ {
 		if i > 0 && nums[i] == nums[i-1] {
 			continue
@@ -28,7 +29,7 @@ func threeSum(nums []int, target int) [][]int {
 	var sum int
 	sort.Ints(nums)
 
-	for index := 1; index < length-2; index++ {
+	for index := 1; index < length-1; index++ {
 		var start, end = 0, length-1
 		if index > 1 && nums[index] == nums[index-1] {
 			start = index - 1
