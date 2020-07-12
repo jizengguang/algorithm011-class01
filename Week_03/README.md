@@ -26,4 +26,7 @@ root.Left = buildTree(preorder[1:len(inorder[:i])+1], inorder[:i])
 root.Right = buildTree(preorder[len(inorder[:i])+1:], inorder[i+1:])
 
 
+分治算法：  
+最主要的是找重复性，可能是最近，可能是最优。大问题都是由许多小的问题组成的。  
+自顶而下。
  
