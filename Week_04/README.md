@@ -7,19 +7,20 @@
 
 2、算法
 
-BFS Go语言模版：    
-    func bfs(root *TreeNode, level int) {	  
-        if root == nil {
-            return
-        }
-        if level == len(res) {
-            res = append(res, []int{})
-        }
-        res[level] = append(res[level], root.Val) 
-        bfs(root.Left, level+1)
-        bfs(root.Right, level+1)
-    }
+BFS Go语言模版:  
 
+    if root == nil {
+ 		return
+ 	}
+ 	
+ 	if level == len(res) {
+ 		res = append(res, []int{})
+ 	}
+ 
+ 	res[level] = append(res[level], root.Val)
+ 
+ 	bfs(root.Left, level+1)
+ 	bfs(root.Right, level+1)  
 queue 方式：
 
     //初始化queue
