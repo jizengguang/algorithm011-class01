@@ -1,7 +1,7 @@
 package Week_04
 
 func numIslands(grid [][]byte) int {
-	var count int = 0
+	var count int
 	for line := range grid {
 		for column := range grid[line] {
 			if grid[line][column] == '0' {
@@ -14,18 +14,19 @@ func numIslands(grid [][]byte) int {
 	return count
 }
 
-func dfsFind(grid [][]byte, i, j int) {
-	if i < 0 || i >= len(grid) || j < 0 || j >= len(grid[i]) {
+func dfsFind(gird [][]byte, i, j int) {
+	if i < 0 || i >= len(gird) || j < 0 || j >= len(gird[i]) {
 		return
 	}
 
-	if grid[i][j] == '0' {
+	if gird[i][j] == '0' {
 		return
 	}
-	grid[i][j] = '0'
-	dfsFind(grid, i-1, j)
-	dfsFind(grid, i+1, j)
-	dfsFind(grid, i, j-1)
-	dfsFind(grid, i, j+1)
 
+	gird[i][j] = '0'
+
+	dfsFind(gird, i-1, j)
+	dfsFind(gird, i+1, j)
+	dfsFind(gird, i, j-1)
+	dfsFind(gird, i, j+1)
 }
