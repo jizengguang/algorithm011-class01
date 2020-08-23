@@ -1,6 +1,8 @@
 package Week_08
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func mergeSort(arr []int, begin, end int) []int {
 	l := len(arr)
